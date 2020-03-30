@@ -6,10 +6,12 @@
 
 
 void inicpila(PILA p);
-void push(PILA p, char dato,int tope);
-char pop(PILA p, int tope);
-char tope(PILA p, int tope);
+void push(PILA p, pers dato,int tope);
+pers pop(PILA p, int tope);
+pers tope(PILA p, int tope);
 int pilavacia(PILA p, int tope);
 void mostrar(PILA p, int tope);
+pers guardarpers(char *nombre, char *apellido, char *segnombre, char *rh, 
+int dianac, int mesnac, int anionac, int diaact, int mesact, int anioact, char *tipsang);
 
 #endif
