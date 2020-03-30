@@ -3,21 +3,21 @@
 
 void inicpila(PILA p)
 {
-    p->valores = (char *)malloc(50*sizeof(char));
+    p->valores = (pers *)malloc(50*sizeof(pers));
 }
 
-void push(PILA p, char dato, int tope)
+void push(PILA p, pers dato, int tope)
 {
     p->valores[tope]=dato;
 }
 
-char pop(PILA p, int tope)
+pers pop(PILA p, int tope)
 {
-    char z = p->valores[tope -1];
+    pers z = p->valores[tope -1];
     return z;
 }
 
-char tope(PILA p, int tope)
+pers tope(PILA p, int tope)
 {
     return p->valores[tope-1];
 }
@@ -26,6 +26,6 @@ void mostrar(PILA p, int tope)
 {
     int i;
     for(i=tope-1; i >= 0; i--)
-        printf("%c ", p->valores[i]);
+        printf();
     printf("\n");
 }
