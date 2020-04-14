@@ -7,17 +7,18 @@ typedef struct _Persona pers;
 
 struct _Persona
 {
-    char *nombre;
-    char *apellido;
-    char *segnombre;
+    char *nombre[10];
+    char *apellidopat[10];
+    char *apellidomat[10];
     char *rh;
     int dianac;
     int mesnac;
-    int añonac;
+    int anionac;
     int diaact;
     int mesact;
-    int añoact;
+    int anioact;
     char *tipsang;
+    char *Curp;
     
 };
 
@@ -28,7 +29,7 @@ struct _Pila
     pers *valores;
 };
 
-typedef pila * PILA;
+typedef pila *PILA;
 
 
 #endif

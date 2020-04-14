@@ -2,18 +2,15 @@
 #include <stdlib.h>
 #include "funciones.c"
 
+char alfabeto[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+char vocales[5]={'A','E','I','O','U'};
+
 int main() 
 {
+	int a=0;
+	PILA pil;
 	pers pers;
-	printf("Ingresa los datos de la persona: (nombre completo iniciando por apellidos, el segundo nombre no es necesario)\n ");
-	setbuf(stdin, NULL);
-	scanf("%s %s %s",&pers.apellidopat, &pers.apellidomat, &pers.nombre);
-	printf("Tipo de sangre y rh (positivo o negativo) ejemplo: O +\n");
-	setbuf(stdin, NULL);
-	scanf("%c %c",&pers.tipsang, &pers.rh);
-	printf("Fecha de nacimiento empezando por el dia (DD MM AAAA), ejemplo: 22 01 2001\n");
-	scanf("%d %d %d",&pers.dianac, &pers.mesnac, &pers.anionac);
-	printf("Fecha actual empezando por el dia (DD MM AAAA), ejemplo: 22 04 2020\n");
-	scanf("%d %d %d",&pers.diaact, &pers.mesact, &pers.anioact);
+	guardarpers(pers);
+	inicpila(pil);
 	return 0;
 }
