@@ -1,5 +1,7 @@
 #include "funciones.h"
 ;
+char cons[20]={'B','C','D','F','G','H','J','K','L','M','N','P','Q','R','S','T','V','W','X','Y','Z'};
+char vocales[4]={'A','E','I','O','U'};
 
 void inicpila(PILA p)
 {
@@ -31,18 +33,19 @@ void mostrar(PILA p, int tope)
     printf("\n");
 }
 
-void guardarpers(pers pers)
+pers guardarpers(pers pers)
 {
 	printf("Ingresa los datos de la persona: (nombre completo iniciando por apellidos, el segundo nombre no es necesario)\n ");
 	setbuf(stdin, NULL);
 	scanf("%s %s %s",&pers.apellidopat, &pers.apellidomat, &pers.nombre);
-	printf("Tipo de sangre y rh (positivo o negativo) ejemplo: O +\n");
+	/*printf("Tipo de sangre y rh (positivo o negativo) ejemplo: O +\n");
 	setbuf(stdin, NULL);
 	scanf("%c %c",&pers.tipsang, &pers.rh);
 	printf("Fecha de nacimiento empezando por el dia (DD MM AAAA), ejemplo: 22 01 2001\n");
 	scanf("%d %d %d",&pers.dianac, &pers.mesnac, &pers.anionac);
 	printf("Fecha actual empezando por el dia (DD MM AAAA), ejemplo: 22 04 2020\n");
-	scanf("%d %d %d",&pers.diaact, &pers.mesact, &pers.anioact);
+	scanf("%d %d %d",&pers.diaact, &pers.mesact, &pers.anioact);*/
+	return pers;
 }
 
 void mostpers(pers pers)
@@ -60,14 +63,21 @@ void mostpers(pers pers)
 	printf("%d\n",pers.anioact);
 }
 
-void curp(pers pers)
+void rfc(pers pers)
 {
-	int contadorAlfabeto, contadorPalabra, i = 0;
-	for (contadorPalabra=0 ; contadorPalabra<[contadorPalabra] ;contadorPalabra++)
-		for (contadorAlfabeto=0 ; contadorAlfabeto<26 ;contadorAlfabeto++)
-			if (alfabeto[contadorAlfabeto] == [contadorPalabra]){
-				pers.Curp= [contadorPalabra];
-				contadorAlfabeto = 26;
+	printf("SU RFC ES: %c",&pers.apellidopat[0]);
+	int contadorCONS, contadorPalabra, contadorvoc, i = 0, cont=0;
+	for (contadorPalabra=0 ; contadorPalabra<contadorPalabra ;contadorPalabra++)
+		for (contadorvoc=0 ; contadorvoc<5 ;contadorvoc++)
+			if (alfabeto[contadorvoc] == pers.apellidopat[contadorPalabra] && cont==0){
+				printf("%c",pers.apellidopat[i]);
+				cont++;
+				contadorvoc = 5;
+			}
+	for (contadorPalabra=0 ; contadorPalabra<pers.apellidomat[contadorPalabra] ;contadorPalabra++)
+		for (contadorCONS=0 ; contadorCONS<26 ;contadorCONS++)
+			if (cons[contadorCONS] == pers.apellidomat[contadorPalabra]){
+				contadorCONS = 26;
 			}
 	printf("\n");
 }

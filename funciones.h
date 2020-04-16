@@ -11,9 +11,9 @@ pers pop(PILA p, int tope);
 pers topep(PILA p, int tope);
 int pilavacia(PILA p, int tope);
 void mostrar(PILA p, int tope);
-void guardarpers(pers pers);
+pers guardarpers(pers pers);
 void mostpers(pers pers);
-void curp(pers pers);
+void rfc(pers pers);
 
 
 #endif

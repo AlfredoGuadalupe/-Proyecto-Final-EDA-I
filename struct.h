@@ -18,7 +18,6 @@ struct _Persona
     int mesact;
     int anioact;
     char *tipsang;
-    char *Curp;
     
 };
 
