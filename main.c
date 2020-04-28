@@ -15,5 +15,6 @@ int main()
 	a++;
 	mostrar(&pil,a);
 	rfc(&pers);
+	falta(&pers);
 	return 0;
 }

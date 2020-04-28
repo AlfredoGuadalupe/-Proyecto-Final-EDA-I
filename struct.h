@@ -7,9 +7,9 @@ typedef struct _Persona pers;
 
 struct _Persona
 {
-    char *nombre[10];
-    char *apellidopat[10];
-    char *apellidomat[10];
+    char nombre[10];
+    char apellidopat[10];
+    char apellidomat[10];
     char *rh;
     int dianac;
     int mesnac;

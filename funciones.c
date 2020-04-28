@@ -50,13 +50,54 @@ void mostpers(pers pers)
 {
 	printf("Nombre: %s %s %s\n",pers.nombre,pers.apellidopat,pers.apellidomat);
 	printf("Tipo de sangre: %c %c\n",pers.tipsang,pers.rh);
-	printf("Fecha de nacimiento: %d %d %d\n",pers.dianac,pers.mesnac,pers.anionac);
-	printf("Fecha actual: %d %d %d\n\n",pers.diaact,pers.mesact,pers.anioact);
+	if(pers.dianac < 10)
+	{
+		if(pers.mesnac < 10)
+		{
+			printf("Fecha de nacimiento: 0%d 0%d %d\n",pers.dianac,pers.mesnac,pers.anionac);
+		}
+		else
+		{
+			printf("Fecha de nacimiento: 0%d %d %d\n",pers.dianac,pers.mesnac,pers.anionac);
+		}
+	}
+	else
+	{
+		if(pers.mesnac < 10)
+		{
+			printf("Fecha de nacimiento: %d 0%d %d\n",pers.dianac,pers.mesnac,pers.anionac);
+		}
+		else
+		{
+			printf("Fecha de nacimiento: %d %d %d\n",pers.dianac,pers.mesnac,pers.anionac);
+		}
+	}
+	if(pers.diaact < 10)
+	{
+		if(pers.mesact < 10)
+		{
+			printf("Fecha actual: 0%d 0%d %d\n\n",pers.diaact,pers.mesact,pers.anioact);
+		}
+		else
+		{
+			printf("Fecha actual: 0%d %d %d\n\n",pers.diaact,pers.mesact,pers.anioact);
+		}
+	}
+	else
+	{
+		if(pers.mesact < 10)
+		{
+			printf("Fecha actual: %d 0%d %d\n\n",pers.diaact,pers.mesact,pers.anioact);
+		}
+		else
+		{
+			printf("Fecha actual: %d %d %d\n\n",pers.diaact,pers.mesact,pers.anioact);
+		}
+	}
 }
 
 void rfc(pers *pers)
 {
-	short diasMes[11]={31,28,};
 	char cons[21]={'B','C','D','F','G','H','J','K','L','M','N','P','Q','R','S','T','V','W','X','Y','Z'};
 	char vocales[5]={'A','E','I','O','U'};
 	printf("SU RFC ES: %c",pers->apellidopat[0]);
@@ -89,4 +130,84 @@ void rfc(pers *pers)
 	else
 		printf("%d",pers->dianac);
 	printf("\n");
+}
+
+void falta(pers *pers)
+{
+	short a=0;
+	int diasMes[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+	if(pers->anioact%4 == 0)
+	{
+		diasMes[1]=29;
+	}
+	if(pers->dianac < pers->diaact)
+	{
+		a=(diasMes[pers->mesact-1] - pers->diaact) + pers->dianac;
+		printf("Faltan %d dia(s) y",a);
+		if(pers->mesnac < pers->mesact)
+		{
+			a=(12 - pers->mesact) + pers->mesnac -1;
+			printf(" %d meses para su cumpleanios",a);
+		}
+		else
+		{
+			a=pers->mesnac - pers->mesact -1;
+			printf(" %d meses para su cumpleanios",a);
+		}	
+	}
+	else
+	{
+		a=(pers->dianac - pers->diaact);
+		printf("Faltan %d dia(s) y",a);
+		if(pers->mesnac < pers->mesact)
+		{
+			a=(12 - pers->mesact) + pers->mesnac;
+			printf(" %d meses para su cumpleanios",a);
+		}
+		else
+		{
+			a=pers->mesnac - pers->mesact;
+			printf(" %d meses para su cumpleanios",a);
+		}
+	}
+}
+
+void edad(pers *pers)
+{
+		short a=0;
+	int diasMes[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+	if(pers->anioact%4 == 0)
+	{
+		diasMes[1]=29;
+	}
+	if(pers->dianac < pers->diaact)
+	{
+		a=;
+		printf("%d",a);
+		if()
+		{
+			a=;
+			printf(" %d",a);
+		}
+		else
+		{
+			a=;
+			printf(" %d",a);
+		}	
+	}
+	else
+	{
+		a=(pers->dianac - pers->diaact);
+		printf("%d",a);
+		if(pers->mesnac < pers->mesact)
+		{
+			a=;
+			printf(" %d",a);
+		}
+		else
+		{
+			a=;
+			printf(" %d",a);
+		}
+	}
 }

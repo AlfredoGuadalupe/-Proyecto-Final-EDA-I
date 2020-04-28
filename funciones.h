@@ -14,6 +14,8 @@ void mostrar(PILA p, int tope);
 void guardarpers(pers *pers);
 void mostpers(pers pers);
 void rfc(pers *pers);
+void falta(pers *pers);
+void edad(pers *pers);
 
 
 #endif
